@@ -13,4 +13,4 @@ export const DEFAULT_SETTINGS: CopilotSettings = {
   stream: true,
   debug: false,
 };
-export const OPEN_AI_API_URL = 'https://api.openai.com/v1/chat/completions';
+export const OPEN_AI_API_URL = 'https://NAMEHERE.openai.azure.com/openai/deployments/DEPLOYMENTHERE/chat/completions?api-version=2023-03-15-preview';

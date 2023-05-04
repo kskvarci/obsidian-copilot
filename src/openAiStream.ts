@@ -75,10 +75,7 @@ export class OpenAIRequestManager {
         const source = new SSE(url, {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`,
-            ...(process.env.OPENAI_ORGANIZATION && {
-              'OpenAI-Organization': process.env.OPENAI_ORGANIZATION,
-            }),
+            'api-key': key,
           },
           method: 'POST',
           payload: JSON.stringify(options),
@@ -146,10 +143,7 @@ export const OpenAIRequest = async (
     url: OPEN_AI_API_URL,
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`,
-      ...(process.env.OPENAI_ORGANIZATION && {
-        'OpenAI-Organization': process.env.OPENAI_ORGANIZATION,
-      }),
+      'api-key': key,
     },
     method: 'POST',
     body: JSON.stringify({
